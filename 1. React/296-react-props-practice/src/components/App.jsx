@@ -1,22 +1,22 @@
 import React from "react";
+import Card from "./Card";
+import Heading from "./Heading";
+import contacts from "../contacts";
 
 function App() {
   return (
     <div>
-      <h1 className="heading">My Contacts</h1>
-      <div className="card">
-        <div className="top">
-          <h2>Beyonce</h2>
-          <img
-            src="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
-            alt="avatar_img"
+      <Heading title="MyContact" />
+      {
+        contacts.map((contact) => (
+          <Card 
+            name = {contact.name}
+            email = {contact.email}
+            phone = {contact.phone}
+            imgURL = {contact.imgURL}
           />
-        </div>
-        <div className="bottom">
-          <p>+123 456 789</p>
-          <p>b@beyonce.com</p>
-        </div>
-      </div>
+        ))
+      }
     </div>
   );
 }
